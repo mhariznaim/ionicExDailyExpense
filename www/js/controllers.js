@@ -3,12 +3,8 @@ angular.module('app.controllers', ['ionic','ngCordova'])
 .controller('addNewExpensesCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
-function ($scope, $cordovaSQLite) {
 
- //$("#expDate").datepicker({ defaultDate: new Date() });
- 
- 
- 
+function ($scope, $cordovaSQLite) {
  $("#addNewExpenses-button1").click( function(){ 
 		
 		var strExpname = $("#expName").val();
@@ -29,7 +25,6 @@ function ($scope, $cordovaSQLite) {
 		  });
 		});
  });
-
 }])
    
 .controller('listOfExpensesCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
@@ -37,6 +32,19 @@ function ($scope, $cordovaSQLite) {
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
 function ($scope, $stateParams) {
 
+	$("#getList").click(function(){
+	
+		varSelectAll = "select * from expenses;";
+		myDB.transaction(function(transaction){
+		transaction.executeSql(varSelectAll,[], function(tx,result ){
+			alert("Yeay! Data from sqlite: " + result.rows.item(0).exp_name);
+		},
+		  function(error){
+		  alert("Noooo! Cannot Save!.."+ error);
+		  });
+		});
+		
+	});
 
 }])
    

@@ -5,17 +5,13 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-var myDB;
 
+var myDB;
 angular.module('app', ['ionic', 'ngCordova','app.controllers', 'app.routes', 'app.directives','app.services',])
 
 .config(function($ionicConfigProvider, $sceDelegateProvider){
-  
-
   $sceDelegateProvider.resourceUrlWhitelist([ 'self','*://www.youtube.com/**', '*://player.vimeo.com/video/**']);
-
 })
-
 .run(function($ionicPlatform,$cordovaSQLite) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -29,8 +25,7 @@ angular.module('app', ['ionic', 'ngCordova','app.controllers', 'app.routes', 'ap
       StatusBar.styleDefault();
     }
 	
-	 myDB = $cordovaSQLite.openDB({name:"dbMyExpnse.db",location:'default'}); //window.sqliteplugin.openDatabase({name:"dbMyExpnse.db", location:"default"});
-	 //$cordovaSQLite.execute(myDB,'create table if not exists expenses(exp_id integer primary key, exp_name VARCHAR, exp_price VARCHAR, exp_date DATE, exp_time VARCHAR)');
+	 myDB = $cordovaSQLite.openDB({name:"dbMyExpnse.db",location:'default'});  
 	 myDB.transaction(function(transaction){
 	 transaction.executeSql('create table if not exists expenses(exp_id integer primary key, exp_name VARCHAR, exp_price VARCHAR, exp_date DATE, exp_time VARCHAR)', [],
 	 function(tx,result)
