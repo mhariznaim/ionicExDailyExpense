@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="D:\utemProjects\ionicApp\daily_expenses\platforms\android\build\intermediates\exploded-aar\android\CordovaLib\unspecified\debug\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="eb49b97a4651b4c991a302f6c3e7dc73fc5887dc">
+        <dex dex="D:\utemProjects\ionicApp\daily_expenses\platforms\android\build\intermediates\pre-dexed\debug\CordovaLib-unspecified-debug_892a2a15d397c9ec3d616413c988b850338a9f04.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\utemProjects\ionicApp\daily_expenses\platforms\android\libs\sqlite-connector.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="76169ab23a4f939925491c6fe186749da5a56ee9">
+        <dex dex="D:\utemProjects\ionicApp\daily_expenses\platforms\android\build\intermediates\pre-dexed\debug\sqlite-connector_faad40bfa7840819a8bbcd0a31021c8e508fdbbc.jar" />
+    </item>
+
+</items>
